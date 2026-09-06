@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Urgent Message for Drake</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            max-width: 600px;
+            background: #161616;
+            border: 1px solid #262626;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .alert-badge {
+            display: inline-block;
+            background: rgba(239, 68, 68, 0.15);
+            color: #ef4444;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            color: #888888;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .stat-card {
+            background: #1f1f1f;
+            padding: 16px;
+            border-radius: 8px;
+            border: 1px solid #2d2d2d;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #737373;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .stat-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f5f5f5;
+        }
+
+        .lock-in-btn {
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 16px 36px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            box-shadow: 0 4px 14px rgba(255, 255, 255, 0.2);
+        }
+
+        .lock-in-btn:hover {
+            background: #e5e5e5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .lock-in-btn:active {
+            transform: translateY(0);
+        }
+
+        #message {
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: #10b981;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="alert-badge">Critical Intervention Required</div>
+        <h1>Drake, Lock In.</h1>
+        <p>The group chat is tired, the timeline is watching, and the vibes require an immediate course correction. It is time to get serious.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Current Status</div>
+                <div class="stat-value" id="status-text">Not Locked In</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Urgency Level</div>
+                <div class="stat-value">Maximum</div>
+            </div>
+        </div>
+
+        <button class="lock-in-btn" onclick="lockIn()">Activate Lock-In Mode</button>
+        <div id="message">Success. The studio session has officially begun. 🦉🔥</div>
+    </div>
+
+    <script>
+        function lockIn() {
+            document.getElementById('status-text').innerText = 'LOCKED IN 🔒';
+            document.getElementById('status-text').style.color = '#10b981';
+            
+            const msg = document.getElementById('message');
+            msg.style.opacity = '1';
+            
+            const btn = document.querySelector('.lock-in-btn');
+            btn.innerText = 'BEING SERIOUS NOW';
+            btn.style.background = '#10b981';
+            btn.style.color = '#ffffff';
+            btn.disabled = true;
+
+            // Pop up reminder for Ethan
+            alert("Reminder: Tell Ethan to lock in too!");
+        }
+    </script>
+
+</body>
+</html>
